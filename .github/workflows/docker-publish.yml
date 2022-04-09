@@ -20,7 +20,10 @@ jobs:
         name: Docker Tags
         run: |
           echo "event name is:" ${{ github.event_name }}
-          echo "event type is:" ${{ github.event.action }}
+          echo "event action is:" ${{ github.event.action }}
+          echo "event type is:" ${{ github.event.type }}
+          echo "event ref type is:" ${{ github.event.ref_type }}
+          echo "event ref is:" ${{ github.event.ref }}
 #          if ${PR_VAR} == true; then
 #            echo "GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 #          else
