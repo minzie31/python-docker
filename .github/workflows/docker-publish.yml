@@ -10,10 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Set outputs
-        id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-
+      - name: Checkout 
+	uses: actions/checkout@v3
+        
       -
         name: Login to DockerHub
         uses: docker/login-action@v1 
