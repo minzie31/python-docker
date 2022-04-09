@@ -24,6 +24,8 @@ jobs:
           echo "event type is:" ${{ github.event.type }}
           echo "event ref type is:" ${{ github.event.ref_type }}
           echo "event ref is:" ${{ github.event.ref }}
+          echo "if tag then value  ${GITHUB_REF}"
+          echo "if tag then value of tag  ${GITHUB_REF#refs/tags/}"
 #          if ${PR_VAR} == true; then
 #            echo "GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 #          else
@@ -32,6 +34,7 @@ jobs:
 
       - name: Sha Short
         run: echo "GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
         
       -
         name: Login to DockerHub
