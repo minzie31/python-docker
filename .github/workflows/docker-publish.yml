@@ -25,7 +25,7 @@ jobs:
           echo "event ref is:" ${{ github.event.ref }}
           echo "if tag then value  ${GITHUB_REF}"
           echo "if tag then value of tag  ${GITHUB_REF#refs/tags/}"
-          if [[ ${GITHUB_REF} = "refs/tags/v*" ]]
+          if [[ ${GITHUB_REF} = refs/tags/v* ]]
           then
              echo "Tag"
              echo "GIT_TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
