@@ -20,4 +20,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: joey31/minzie31:python-docker-latest
+          tags: ${{ github.repository }}:python-docker-latest
