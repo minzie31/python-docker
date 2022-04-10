@@ -1,4 +1,15 @@
-FROM centos/python-38-centos7
+FROM python:3.9
 
-COPY ./hello.py /opt
-ENTRYPOINT ["python3", "/opt/hello.py"]
+RUN pip install -i https://pypi.python.org/simple pipenv
+
+ENV PROJECT_DIR /opt
+
+COPY ./hello.py ${PROJECT_DIR}
+COPY ./app.py ${PROJECT_DIR}
+WORKDIR ${PROJECT_DIR}
+
+COPY Pipfile Pipfile.lock ${PROJECT_DIR}/
+
+RUN pipenv install --system --deploy
+CMD ["python3", "-m", "flask", "run"]
+#CMD ["ls", "/opt/.venv"]
