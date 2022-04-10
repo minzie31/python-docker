@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3f0b140934651c4218b3480912e478551a5f968769b4d7f27798d393f5b94ee2"
+            "sha256": "bf48cb491cfb5212607229965198a2d0b9a116bae85c789c360c8b2fe9679e2c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -10,7 +10,7 @@
         "sources": [
             {
                 "name": "pypi",
-                "url": "https://pypi.dev.twilio.com/simple/",
+                "url": "https://pypi.python.org/simple",
                 "verify_ssl": true
             }
         ]
